@@ -55,7 +55,7 @@ const Navbar = () => {
         </AnimatePresence>
 
         {/* menu */}
-        <Button tipeButton='menu'  className={className} onClick={openMenu}>
+        <Button tipeButton="menu" className={className} onClick={openMenu}>
           <AnimatePresence mode="wait">
             <motion.span
               key={isOpen ? "close" : "menu"}
@@ -71,12 +71,12 @@ const Navbar = () => {
         </Button>
 
         {/* menu  */}
-        <motion.div
-          transition={{ type: "spring", stiffness: 200, damping: 25 }}
-          className={`${classNameMenu}`}
-        >
-          <AnimatePresence>
-            {isOpen && (
+        {isOpen && (
+          <motion.div
+            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            className={`${classNameMenu}`}
+          >
+            <AnimatePresence>
               <motion.div
                 key="menu-content"
                 initial={{ opacity: 0, y: -10 }}
@@ -86,9 +86,9 @@ const Navbar = () => {
               >
                 <Listmenu onClose={closeMenu} />
               </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+            </AnimatePresence>
+          </motion.div>
+        )}
       </div>
     </nav>
   );

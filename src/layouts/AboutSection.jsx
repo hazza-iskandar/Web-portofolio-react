@@ -7,11 +7,11 @@ const AboutSection = () => {
     <section id="about" className="about-section py-10 ">
       <div className="container">
         <div className="w-full md:flex gap-5 rounded-md px-5 md:px-10 py-5 shadow-about overflow-hidden">
-          <div className="w-full lg:w-1/2 relative -top-6 h-140">
+          <div className="w-full md:w-1/2 relative -top-6 h-140">
             <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
           </div>
 
-          <div className="w-full mt-15 md:mt-0 lg:w-1/2 text-center flex flex-col items-center justify-center">
+          <div className="w-full mt-15 md:mt-8 lg:w-1/2 text-center flex flex-col items-center justify-center">
             <h1
               className="font-instrument text-2xl md:text-4xl lg:text-5xl mb-7 md:mb-10 font-bold relative after:inline-block after:w-50 after:h-0.75 after:bg-myPrimary after:absolute after:-bottom-3 after:left-0"
               data-aos="fade-up"
@@ -43,38 +43,42 @@ const AboutSection = () => {
             {/* sosial media */}
             <div className="flex gap-2 mt-5 ">
               <a
-                href=""
+                href="https://github.com/hazza-iskandar"
                 className="text-2xl"
                 data-aos="zoom-in"
                 data-aos-delay="1400"
                 data-aos-duration="1000"
+                target="_blank"
               >
                 <FontAwesomeIcon icon="fa-brands fa-github" />
               </a>
               <a
-                href=""
+                href="https://www.instagram.com/za_iskndr/"
                 className="text-2xl"
                 data-aos="zoom-in"
                 data-aos-delay="1600"
                 data-aos-duration="1000"
+                target="_blank"
               >
                 <FontAwesomeIcon icon="fa-brands fa-instagram" />
               </a>
               <a
-                href=""
+                href="https://www.linkedin.com/in/hazza-lauzai-muaddab-iskandar/"
                 className="text-2xl"
                 data-aos="zoom-in"
                 data-aos-delay="1800"
                 data-aos-duration="1000"
+                target="_blank"
               >
                 <FontAwesomeIcon icon="fa-brands fa-linkedin" />
               </a>
               <a
-                href=""
+                href="https://wa.me/6285659193197?text=Hallo, Boleh kenalan?"
                 className="text-2xl"
                 data-aos="zoom-in"
                 data-aos-delay="2000"
                 data-aos-duration="1000"
+                target="_blank"
               >
                 <FontAwesomeIcon icon="fa-brands fa-whatsapp" />
               </a>
