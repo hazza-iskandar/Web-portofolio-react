@@ -10,7 +10,8 @@ const AboutSection = () => {
           <div className="w-full lg:w-1/2 relative -top-6 h-140">
             <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
           </div>
-          <div className="w-full lg:w-1/2 text-center flex flex-col items-center justify-center">
+
+          <div className="w-full mt-10 md:mt-0 lg:w-1/2 text-center flex flex-col items-center justify-center">
             <h1
               className="font-instrument text-2xl md:text-4xl lg:text-5xl mb-7 md:mb-10 font-bold relative after:inline-block after:w-50 after:h-0.75 after:bg-myPrimary after:absolute after:-bottom-3 after:left-0"
               data-aos="fade-up"
