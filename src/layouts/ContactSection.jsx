@@ -1,7 +1,33 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import Colorblur from "../components/Colorblur";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    nama: "",
+    email: "",
+    tujuan: "",
+    pesan: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const noWA = "6285659193197";
+    const teks = `Hallo, saya *${formData.nama}* Tujuan saya ingin *${formData.tujuan}*.
+     \nDan isinya Sebagai Berikut:
+    \n_${formData.pesan}_. 
+    \n\nBerikut Email saya *${formData.email}*`;
+
+    const url = `https://wa.me/${noWA}?text=${encodeURIComponent(teks)}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
     <section id="contact">
       <div className="container">
@@ -38,12 +64,16 @@ const ContactSection = () => {
           </div>
 
           {/* form */}
-          <form action="" className="w-4/5 mx-auto p-3 mt-7">
-            <div className="my-4 mb-6 relative" 
-             data-aos="fade-up"
+          <form onSubmit={handleSubmit} className="w-4/5 mx-auto p-3 mt-7">
+            <div
+              className="my-4 mb-6 relative"
+              data-aos="fade-up"
               data-aos-delay="1400"
-              data-aos-duration="1000">
+              data-aos-duration="1000"
+            >
               <input
+                name="nama"
+                onChange={handleChange}
                 id="nama"
                 type="text"
                 placeholder=" "
@@ -56,11 +86,15 @@ const ContactSection = () => {
               </label>
             </div>
 
-            <div className="my-4 mb-6 relative"
-            data-aos="fade-up"
+            <div
+              className="my-4 mb-6 relative"
+              data-aos="fade-up"
               data-aos-delay="1600"
-              data-aos-duration="1000">
+              data-aos-duration="1000"
+            >
               <input
+                onChange={handleChange}
+                name="email"
                 id="email"
                 type="email"
                 placeholder=" "
@@ -73,28 +107,36 @@ const ContactSection = () => {
               </label>
             </div>
 
-            <div className="my-4 mb-6 relative" 
-            data-aos="fade-up"
+            <div
+              className="my-4 mb-6 relative"
+              data-aos="fade-up"
               data-aos-delay="1800"
-              data-aos-duration="1000">
+              data-aos-duration="1000"
+            >
               <input
-                id="subject"
+                onChange={handleChange}
+                name="tujuan"
+                id="tujuan"
                 type="text"
                 placeholder=" "
                 className="peer w-full px-4 pt-6 pb-2 rounded-md bg-primary-dark text-white 
                focus:outline-none border-2 border-white/40 shadow-white"
               />
 
-              <label htmlFor="subject" className="input-form">
-                Subject
+              <label htmlFor="tujuan" className="input-form">
+                Tujuan
               </label>
             </div>
 
-            <div className="my-4 mb-6 relative"
-            data-aos="fade-up"
+            <div
+              className="my-4 mb-6 relative"
+              data-aos="fade-up"
               data-aos-delay="2000"
-              data-aos-duration="1000">
+              data-aos-duration="1000"
+            >
               <textarea
+                onChange={handleChange}
+                name="pesan"
                 id="pesan"
                 placeholder=" "
                 className="peer w-full px-4 pt-6 pb-2 h-50 rounded-md bg-primary-dark text-white 
@@ -105,7 +147,10 @@ const ContactSection = () => {
               </label>
             </div>
 
-            <Button className="w-full rounded-lg py-3 font-semibold text-base hover:shadow-white">
+            <Button
+              type="submit"
+              className="w-full rounded-lg py-3 font-semibold text-base hover:shadow-white"
+            >
               Kirim
             </Button>
           </form>

@@ -55,7 +55,7 @@ const Navbar = () => {
         </AnimatePresence>
 
         {/* menu */}
-        <Button className={className} onClick={openMenu}>
+        <Button tipeButton='menu'  className={className} onClick={openMenu}>
           <AnimatePresence mode="wait">
             <motion.span
               key={isOpen ? "close" : "menu"}

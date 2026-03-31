@@ -3,10 +3,20 @@ const Button = ({
   href,
   className = "",
   onClick = () => {},
-  aos,
+  type = "button",
+  tipeButton = "",
 }) => {
   const basedStyle = "btn";
   const componentStyle = `${basedStyle} ${className}`;
+
+  const aos =
+    tipeButton != "menu"
+      ? {
+          "data-aos": "zoom-in",
+          "data-aos-delay": "600",
+          "data-aos-duration": "1000",
+        }
+      : {};
 
   // jika dia href
   if (href) {
@@ -24,13 +34,7 @@ const Button = ({
   }
 
   return (
-    <button
-      className={componentStyle}
-      onClick={onClick}
-      data-aos="zoom-in"
-      data-aos-delay="600"
-      data-aos-duration="1000"
-    >
+    <button type={type} className={componentStyle} onClick={onClick} {...aos}>
       {children}
     </button>
   );

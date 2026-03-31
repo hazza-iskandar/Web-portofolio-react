@@ -33,20 +33,20 @@ const LayerLoading = ({onFinish}) => {
     <div id="loading" className="fixed inset-0 bg-primary-dark z-9999999">
       <div className="container relative">
         <div className="absolute bottom-[30%] w-1/2">
-          <h1 className="text-7xl font-bold text-white/90">
+          <h1 className="text-3xl md:text-7xl font-bold text-white/90">
             {" "}
             I'm An Fullstack Developer
           </h1>
-          <p className="text-gray-300/60 mt-4 text-lg">
+          <p className="text-gray-300/60 mt-4 text-xs md:text-lg">
             I’m a Full-Stack Developer with expertise in front-end and back-end
             development, focused on building scalable, responsive web
             applications that are visually engaging and user-friendly.
           </p>
         </div>
 
-        <div className="absolute bottom-10 flex justify-between items-end left-0 right-0 px-20">
+        <div className="absolute bottom-10 flex justify-between items-end left-0 right-0 px-5 md:px-20">
           <p className="text-lg font-bold text-slate-100/60">Loading...</p>
-          <h1 className="text-8xl font-bold">{progress}%</h1>
+          <h1 className="text-3xl md:text-8xl font-bold">{progress}%</h1>
         </div>
 
         <Colorblur className="opacity-70 left-0 bottom-[30%] w-full md:w-100 md:bottom-0"></Colorblur>
