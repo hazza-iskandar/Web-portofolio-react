@@ -52,6 +52,7 @@ const ProjectsSection = () => {
             data-aos="zoom-in"
             data-aos-delay="600"
             data-aos-duration="1000"
+            target="_blank"
           >
             <div className="h-full overflow-hidden rounded-lg">
               <img
@@ -78,11 +79,12 @@ const ProjectsSection = () => {
             </div>
           </a>
           <a
-            href=""
+            href="https://github.com/hazza-iskandar/web-store-livewire"
             className="w-full md:w-1/2 p-4 rounded-lg my-5 md:my-0 bg-slate-200/20 border border-white/20 group cursor-pointer flex justify-center relative"
             data-aos="zoom-in"
             data-aos-delay="1000"
             data-aos-duration="1000"
+            target="_blank"
           >
             <div className="h-full overflow-hidden rounded-lg">
               <img
